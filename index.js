@@ -4,7 +4,7 @@ const fs = require('fs')
 
 var content = new Buffer(30);
 
-fs.readFile('/index.html', (err, data) => {
+fs.readFile('index.html', (err, data) => {
 if (err) throw err;
 console.log(data);
 content.write(data);
