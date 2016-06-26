@@ -7,9 +7,10 @@ app.use(express.static(__dirname + '/public'))
 var content;
 fs.readFileSync('/index.html', function read(err, data) {content = data;});
 
+content = content.toString('utf8');
 
 app.get('/', function(request, response) {
-  response.send(content)
+  response.send(content);
 })
 
 app.listen(app.get('port'), function() {
