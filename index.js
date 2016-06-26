@@ -4,6 +4,9 @@ const fs = require('fs')
 
 var content = new Buffer(30);
 
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static(__dirname + '/public'))
+
 fs.readFile('index.html', 'utf8', (err, data) => {
 if (err) throw err;
 console.log(data);
@@ -12,9 +15,6 @@ console.log(content);
 })
 
 content.toString('utf8');
-
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
   response.send(content);
