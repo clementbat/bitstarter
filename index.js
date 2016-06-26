@@ -2,7 +2,7 @@ var express = require('express')
 var app = express()
 const fs = require('fs')
 
-var content = new Buffer(30);
+var content = new Buffer(30000);
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
