@@ -16,7 +16,7 @@ console.log(content);
 
 content = content.toString('utf8');
 
-app.get('/index.js', function(request, response) {
+app.get('/', function(request, response) {
   response.send(content);
 })
 
