@@ -4,8 +4,14 @@ const fs = require('fs')
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
+
 var content;
-fs.readFileSync('/index.html', function read(err, data) {content = data;});
+
+fs.readFileSync('/index.html', function read(err, data) {
+console.log(data);
+content = data;
+console.log(content);
+})
 
 content = content.toString('utf8');
 
