@@ -9,9 +9,7 @@ app.use(express.static(__dirname + '/public'))
 
 fs.readFile('index.html', 'utf8', (err, data) => {
 if (err) throw err;
-console.log(data);
 content.write(data);
-console.log(content);
 })
 
 content.toString('utf8');
