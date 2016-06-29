@@ -8,6 +8,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 fs.readFile('index.html', 'utf8', (err, data) => {
+console.log(data);
 if (err) throw err;
 content.write(data);
 app.get('/', function(request, response) {
