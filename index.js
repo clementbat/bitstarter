@@ -11,7 +11,7 @@ fs.readFile('index.html', 'utf8', (err, data) => {
 if (err) throw err;
 content.write(data);
 app.get('/', function(request, response) {
-  response.send(content);
+  response.send(data);
 })
 })
 
