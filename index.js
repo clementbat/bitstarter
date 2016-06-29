@@ -10,13 +10,12 @@ app.use(express.static(__dirname + '/public'))
 fs.readFile('index.html', 'utf8', (err, data) => {
 if (err) throw err;
 content.write(data);
-})
-
-content.toString('utf8');
-
 app.get('/', function(request, response) {
   response.send(content);
 })
+})
+
+content.toString('utf8');
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
